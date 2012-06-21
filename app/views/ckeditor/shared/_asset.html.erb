@@ -1,7 +1,7 @@
 <%= content_tag(:div, :id => dom_id(asset), :class => "gal-item", :"data-url" => asset.url_content) do %>
     <%= link_to image_tag("/assets/ckeditor/filebrowser/images/gal_del.png",
-                          :title => I18n.t('ckeditor.buttons.delete')),
-                'dummy_url', #polymorphic_path(asset, :format => :json),
+                :title => I18n.t('ckeditor.buttons.delete')),
+                "/#{@site.host}/picture/#{asset.id}",
                 :remote => true,
                 :method => :delete,
                 :confirm => t('ckeditor.confirm_delete'),
